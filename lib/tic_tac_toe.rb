@@ -94,3 +94,16 @@ def winner(board)
         return board[won?(board)[0]]
     end
 end
+
+def play(board)
+    while !over?(board)
+        turn(board)
+        display_board(board)
+    end
+    champ = winner(board)
+    if won?(board)
+        puts "Congratulations #{champ}!"
+    else
+        puts "Cat\'s Game!"
+    end
+end
